@@ -41,7 +41,7 @@ export default function Home() {
 
 
   return (
-    // <div className="w-full h-full bg-s">
+    <div className="w-full h-full bg-s">
       <div className="bg-red-400 w-[800px] flex justify-center min-h-[900px] mt-6 mx-auto rounded">
         <div className="">
           <div className="">
@@ -86,6 +86,6 @@ export default function Home() {
             <div className="border-b m-2"></div>
           </div>
       </div>
-    // </div>
+     </div>
   );  
 }
