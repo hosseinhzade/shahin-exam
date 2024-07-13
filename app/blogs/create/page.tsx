@@ -11,6 +11,23 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
 
   const [data, setData] = useState([]);
+  function deleteUser(id: any) {
+    setLoading(true)
+    axios.delete(`/api/user/create?id=${id}`).then((res) => {
+      if (res.data.operation === "done") {
+        axios.get("/api/user/create").then((res) => {
+          setData(res.data);
+        });
+        setLoading(false)
+      }
+    });
+  }
+  useEffect(() => {
+    axios.get("/api/user/create").then((res) => {
+      setData(res.data);
+    });
+  }, []);
+
 
 
   function createUser() {
@@ -84,6 +101,40 @@ export default function Home() {
             </div>
             <div className="flex justify-center text-black">{error}</div>
             <div className="border-b m-2"></div>
+            <table>
+          <thead>
+            <tr>
+              <th>head</th>
+              <th> auth</th>
+              <th>text</th>
+              {/* <th>action</th> */}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((user: any, index) => {
+              return (
+                <tr key={index}>
+                  <td>{user.head}</td>
+                  <td>{user.auth}</td>
+                  <td>{user.text}</td>
+                  <td>
+                    <button
+                      type="submit"
+                      className="bg-red-600 text-white p-2 rounded-lg cursor-pointer"
+                      value="delete user"
+                      onClick={() => {
+                        deleteUser(user.id);
+                      }}
+                    >
+                      delete user
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
           </div>
       </div>
      </div>
