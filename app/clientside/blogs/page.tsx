@@ -112,7 +112,7 @@ export default function Home() {
           </table>
           <div className="flex justify-center mt-2">
             <button className="bg-yellow-500 p-2 rounded-md">
-              <Link href={"/blogs/create"}>go to create blogs</Link>
+              <Link href={"/clientside/blogs/create"}>go to create blogs</Link>
             </button>
           </div>
         </div>
