@@ -87,7 +87,7 @@ export default function Home() {
                   </td>
                 </tr>
               ) : (
-                data.slice(-3).map((user, index) => (
+                data.map((user, index) => (
                   <tr key={index} className="border-b">
                     <td className="py-2">{user.index}</td>
                     <td className="py-2">{user.header}</td>
