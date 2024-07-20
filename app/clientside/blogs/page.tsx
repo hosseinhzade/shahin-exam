@@ -102,7 +102,7 @@ export default function Home() {
                           deleteUser(user.index);
                         }}
                       >
-                        delete user
+                        delete blog
                       </button>
                     </td>
                   </tr>
