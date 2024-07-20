@@ -77,7 +77,7 @@ export default function Page() {
                         <input
                           type="submit"
                           className="bg-red-600 text-white p-2 rounded-lg cursor-pointer"
-                          value="delete user"
+                          value="delete blog"
                         />
                       </form>
                     </td>
@@ -88,7 +88,7 @@ export default function Page() {
           </table>
           <div className="flex justify-center mt-2">
             <button className="bg-purple-500 p-2 rounded-md">
-              <a href="/blogs">go to see blogs</a>
+              <a href="/serverside/blogs/create">go to create blogs</a>
             </button>
           </div>
         </div>
